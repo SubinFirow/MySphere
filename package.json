@@ -1,0 +1,46 @@
+{
+  "name": "mysphere-monorepo",
+  "version": "1.0.0",
+  "description": "MySphere monorepo with Express.js backend and Next.js frontend",
+  "private": true,
+  "workspaces": [
+    "packages/backend",
+    "packages/frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --workspace=packages/backend",
+    "dev:frontend": "npm run dev --workspace=packages/frontend",
+    "build": "npm run build --workspaces",
+    "build:backend": "npm run build --workspace=packages/backend",
+    "build:frontend": "npm run build --workspace=packages/frontend",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "npm run start --workspace=packages/backend",
+    "start:frontend": "npm run start --workspace=packages/frontend",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "clean": "npm run clean --workspaces && rm -rf node_modules",
+    "install:all": "npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/mysphere-monorepo.git"
+  },
+  "keywords": [
+    "monorepo",
+    "express",
+    "nextjs",
+    "mongodb",
+    "mongoose",
+    "fullstack"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
