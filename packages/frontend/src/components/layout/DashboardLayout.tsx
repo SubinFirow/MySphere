@@ -37,8 +37,9 @@ import {
   Person,
   Receipt,
   FitnessCenter,
+  Business,
 } from "@mui/icons-material";
-// import { useTheme as useCustomTheme } from "@/components/ThemeProvider";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useRouter, usePathname } from "next/navigation";
 
 const drawerWidth = 280;
@@ -59,6 +60,7 @@ const navigationItems: NavigationItem[] = [
   { text: "Dashboard", icon: <Dashboard />, path: "/" },
   { text: "My Expenses", icon: <Receipt />, path: "/expenses" },
   { text: "Body Weight", icon: <FitnessCenter />, path: "/body-weight" },
+  { text: "Wholesale", icon: <Business />, path: "/wholesale" },
   { text: "Users", icon: <People />, path: "/users" },
   { text: "Analytics", icon: <Analytics />, path: "/analytics" },
   { text: "Inventory", icon: <Inventory />, path: "/inventory" },
@@ -258,6 +260,8 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
           {/* Header Actions */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <ThemeToggle />
+
             <Tooltip title="Notifications">
               <IconButton color="inherit">
                 <Badge badgeContent={4} color="error">

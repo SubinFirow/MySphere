@@ -119,6 +119,28 @@ export const apiClient = {
       getStats: () => api.get("/api/body-weight/analytics/stats"),
     },
   },
+
+  // Wholesale endpoints
+  wholesale: {
+    getAll: (params?: Record<string, unknown>) =>
+      api.get("/api/wholesale", { params }),
+    getById: (id: string) => api.get(`/api/wholesale/${id}`),
+    create: (data: Record<string, unknown>) => api.post("/api/wholesale", data),
+    update: (id: string, data: Record<string, unknown>) =>
+      api.put(`/api/wholesale/${id}`, data),
+    delete: (id: string) => api.delete(`/api/wholesale/${id}`),
+    getRecent: () => api.get("/api/wholesale/recent"),
+
+    // Analytics endpoints
+    analytics: {
+      getSummary: (period?: string) =>
+        api.get("/api/wholesale/analytics/summary", { params: { period } }),
+      getTrends: (months?: number) =>
+        api.get("/api/wholesale/analytics/trends", { params: { months } }),
+      getStats: () => api.get("/api/wholesale/analytics/stats"),
+      getTips: () => api.get("/api/wholesale/analytics/tips"),
+    },
+  },
 };
 
 export default apiClient;

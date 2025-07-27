@@ -74,6 +74,7 @@ app.get("/api/health", (req, res) => {
 // Import routes
 app.use("/api/expenses", require("./routes/expenses"));
 app.use("/api/body-weight", require("./routes/bodyWeight"));
+app.use("/api/wholesale", require("./routes/wholesale"));
 // app.use('/api/auth', require('./routes/auth'));
 // app.use('/api/users', require('./routes/users'));
 

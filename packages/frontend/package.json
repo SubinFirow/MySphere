@@ -16,10 +16,13 @@
     "@mui/x-date-pickers": "^8.7.0",
     "@types/axios": "^0.9.36",
     "axios": "^1.10.0",
+    "chart.js": "^4.5.0",
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.13",
+    "framer-motion": "^12.23.6",
     "next": "15.3.5",
     "react": "^19.0.0",
+    "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
