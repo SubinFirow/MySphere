@@ -22,7 +22,13 @@ app.use(limiter);
 // CORS configuration
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin: [
+      "http://localhost:3001", // Admin frontend
+      "http://localhost:3002", // User app
+      "http://localhost:3003", // User app alt
+      "http://localhost:3004", // User app alt
+      process.env.FRONTEND_URL || "http://localhost:3002",
+    ],
     credentials: true,
   })
 );
